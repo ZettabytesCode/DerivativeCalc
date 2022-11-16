@@ -6,7 +6,8 @@ class ExpressionTree{
 	private:
 		Node* root;
 		int size;
-		void balanceTree();
+		void balanceTree(Node* unbalancedNode);
+		unordered_map<Node*, int> calcBalanceFactors();
 	public:
 		class Node{
 			public:
