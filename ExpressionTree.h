@@ -19,5 +19,7 @@ class ExpressionTree{
 				Node(char var) : leftChild(nullptr), rightChild(nullptr), parent(nullptr), expression(var) {}
 		}
 	void addExpression(string s);
+	int getSize();
+	void simplify();
 	~ExpressionTree();
 };

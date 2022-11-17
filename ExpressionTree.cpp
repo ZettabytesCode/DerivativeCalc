@@ -3,7 +3,9 @@
 using namespace std;
 
 void ExpressionTree::addExpression(string s){
+	for(int i = 0; i < s.size(); i++){
 
+	}
 }
 
 void ExpressionTree::deleteNode(Node* node){
@@ -16,4 +18,8 @@ void ExpressionTree::deleteNode(Node* node){
 
 ExpressionTree::~ExpressionTree(){
 	deleteNode(root);
+}
+
+int ExpressionTree::getSize(){
+	return size;
 }
