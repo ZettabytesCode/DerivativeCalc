@@ -7,6 +7,7 @@ class ExpressionTree{
 		Node* root;
 		int size;
 		void balanceTree(Node* unbalancedNode);
+		void deleteNode(Node* node);
 		unordered_map<Node*, int> calcBalanceFactors();
 	public:
 		class Node{
@@ -17,6 +18,6 @@ class ExpressionTree{
 				char expression;
 				Node(char var) : leftChild(nullptr), rightChild(nullptr), parent(nullptr), expression(var) {}
 		}
-
 	void addExpression(string s);
+	~ExpressionTree();
 };
