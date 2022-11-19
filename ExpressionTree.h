@@ -13,14 +13,15 @@ class ExpressionTree{
 		unordered_map<Node*, int> calcBalanceFactors();
 		vector<string> tokenizeExpression(string str);
 		bool isSameCharClass(char c1, char c2);
+		bool isNumber(string str);
 	public:
 		class Node{
 			public:
 				Node* leftChild;
 				Node* rightChild;
 				Node* parent;
-				char expression;
-				Node(char var) : leftChild(nullptr), rightChild(nullptr), parent(nullptr), expression(var) {}
+				string expression;
+				Node(string var) : leftChild(nullptr), rightChild(nullptr), parent(nullptr), expression(var) {}
 		}
 	void createExpressionTree(string s);
 	int getSize();

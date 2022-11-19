@@ -5,8 +5,32 @@
 
 using namespace std;
 
+bool ExpressionTree::isNumber(string str){
+	if(str.compare("x") == 0){
+		return true;
+	}
+	for(int i = 0; i < str.length(); i++){
+		if(str[i] > 58 && 47 > str[i]){
+			return false;
+		}
+	}
+	return true;
+}
+
 void ExpressionTree::createExpressionTree(string s){
 	vector<string> tokens = tokenizeExpression(s);	
+	for(int i = 0; i < tokens.size();i ++){
+		string currTok = tokens[i];
+		Node* newNode = new Node(currTok);
+		if(root == nullptr){
+			root = newNode;	
+		}else if(isNumber(currTok)){
+			root->rightChild = newNode;
+		}else{
+			newNode->leftChild = root;
+			root = newNode;
+		}
+	}
 }
 
 void ExpressionTree::deleteNode(Node* node){
