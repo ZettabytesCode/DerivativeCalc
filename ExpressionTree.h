@@ -5,6 +5,20 @@
 using namespace std;
 
 class ExpressionTree{
+	public:
+		class Node{
+			public:
+				Node* leftChild;
+				Node* rightChild;
+				Node* parent;
+				string expression;
+				Node(string var) : leftChild(nullptr), rightChild(nullptr), parent(nullptr), expression(var) {}
+		};
+	void createExpressionTree(string s);
+	int getSize();
+	void simplify();
+	~ExpressionTree();
+	ExpressionTree(){}
 	private:
 		Node* root;
 		int size;
@@ -14,19 +28,4 @@ class ExpressionTree{
 		vector<string> tokenizeExpression(string str);
 		bool isSameCharClass(char c1, char c2);
 		bool isNumber(string str);
-	public:
-		class Node{
-			public:
-				Node* leftChild;
-				Node* rightChild;
-				Node* parent;
-				string expression;
-				Node(string var) : leftChild(nullptr), rightChild(nullptr), parent(nullptr), expression(var) {}
-		}
-	void createExpressionTree(string s);
-	int getSize();
-	void simplify();
-	~ExpressionTree();
-
-	ExpressionTree(){}
 };

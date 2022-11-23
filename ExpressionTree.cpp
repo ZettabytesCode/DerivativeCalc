@@ -52,14 +52,14 @@ int ExpressionTree::getSize(){
 vector<string> ExpressionTree::tokenizeExpression(string str){
 	vector<string> output;
 	string buf;
-	char prev = str[0]
+	char prev = str[0];
 	buf.push_back(prev);
 	for(int i = 1; i < str.size(); i++){
-		if(isSameCharClass(prev, str[i]){
+		if(isSameCharClass(prev, str[i])){
 			buf.push_back(str[i]);
 		}else{
 			output.push_back(buf);
-			buf.clear();`
+			buf.clear();
 		}
 		prev = str[i];
 	}
